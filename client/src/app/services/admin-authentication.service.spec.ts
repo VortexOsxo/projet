@@ -2,7 +2,7 @@ import { HttpStatusCode } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { TestBed } from '@angular/core/testing';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { AdminAuthenticationService } from './admin-authentication.service';
 
 describe('AdminAuthenticationService', () => {
