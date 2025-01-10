@@ -1,0 +1,12 @@
+<textarea 
+    matInput
+    [(ngModel)]="longAnswer"
+    placeholder="Entrez votre réponse"
+    class="custom-textarea"
+    [disabled]="!canSubmitAnswer()"
+    [maxLength]="maxCharacters"
+    (input)="onTextModified()"
+>
+</textarea>
+
+<p class="character-count">{{ longAnswer.length }}/{{ maxCharacters }}</p>

@@ -1,0 +1,21 @@
+#lemon-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    left: 10px;
+}
+
+#lemon-container img {
+    width: 4vw;
+    height: 8vh;
+}
+
+#label {
+    width: 4.14vw;
+    height: 2.14vh;
+    color: #467a45;
+    font-family: 'Jua-Regular', Helvetica;
+    font-weight: 600;
+    font-size: 1vw;
+}

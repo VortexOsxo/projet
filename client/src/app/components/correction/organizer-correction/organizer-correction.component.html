@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Évaluez la réponse</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{answer.answer}}</p>
+      <div class="button-container">
+        <button mat-button color="primary" (click)="scoreAnswer(1)">100%</button>
+        <button mat-button color="primary" (click)="scoreAnswer(0.5)">50%</button>
+        <button mat-button color="primary" (click)="scoreAnswer(0)">0%</button>
+      </div>
+    </mat-card-content>
+  </mat-card>

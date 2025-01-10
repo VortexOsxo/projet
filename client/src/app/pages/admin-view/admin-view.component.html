@@ -1,0 +1,72 @@
+<app-logo-title></app-logo-title>
+<div>
+    <h1 id="title">Liste de jeux</h1>
+
+    <mat-expansion-panel hideToggle *ngFor="let quiz of quizzes" class="mat-expansion-panel">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="mat-panel-title">
+                {{ quiz.title }}
+            </mat-panel-title>
+            <mat-panel-description class="panel-description">
+                <div>Dernière modification: {{ quiz.lastModification | date: 'medium' }}</div>
+                <div>Durée du jeu: {{ quiz.duration + ' secondes' }}</div>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ng-container>
+            <div class="game-info">
+                <div>
+                    <div class="game-info">
+                        <div>
+                            <h3 class="game-title">Description du jeu:</h3>
+                            <p class="game-description">{{ quiz.description }}</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h3 class="game-title">Durée du jeu:</h3>
+                            <p class="game-time">{{ quiz.duration + ' secondes' }}</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h3 class="game-title">Dernière modification:</h3>
+                            <p class="game-modify-date">{{ quiz.lastModification | date: 'medium' }}</p>
+                        </div>
+                    </div>
+
+                    <ng-container>
+                        <h3 class="game-title">Les questions du jeu:</h3>
+                        <ul *ngFor="let question of quiz.questions">
+                            <li>
+                                <p>{{ question.type }}: {{ question.text }}</p>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="button" mat-fab color="primary" class="box-button" (click)="toggleVisibility(quiz)">
+                    <mat-icon>{{ visibility(quiz) }}</mat-icon>
+                </button>
+                <button type="button" mat-fab color="primary" class="box-button" (click)="modifyQuiz(quiz)" routerLink="/quiz-form">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button type="button" mat-fab color="primary" class="box-button" (click)="exportQuiz(quiz)">
+                    <mat-icon>upload</mat-icon>
+                </button>
+                <button type="button" mat-fab color="primary" class="box-button" (click)="deleteQuiz(quiz)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </ng-container>
+    </mat-expansion-panel>
+    <div class="button-container">
+        <button mat-raised-button class="button" routerLink="/quiz-form">Créer un nouveau jeu</button>
+        <button mat-raised-button class="button" (click)="openImportModal()">Importer un jeu</button>
+        <button mat-raised-button class="button" routerLink="/bank">Banque de questions</button>
+        <button mat-raised-button class="button" routerLink="/game-history">Consulter l'historique des jeux</button>
+    </div>
+</div>

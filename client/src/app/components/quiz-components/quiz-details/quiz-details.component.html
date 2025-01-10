@@ -1,0 +1,20 @@
+<h4>{{quiz.title}}</h4>
+<p> {{quiz.description}}</p>
+<p> Temps pour répondre: {{quiz.duration}}s</p>
+<p> Nombre de question: {{quiz.questions.length}}</p>
+<p> Dernière Modification: {{quiz.lastModification | date:'dd/MM/yyyy'}}</p>
+<div class="question-container">
+<mat-card class="question-card">
+    <mat-card-header>
+      <mat-card-title>Liste de question: </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let question of quiz.questions; let i = index" class="left-align">
+          {{ i + 1 }}. {{question.type}}: {{question.text}}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+  

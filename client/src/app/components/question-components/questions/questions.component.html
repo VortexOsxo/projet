@@ -1,0 +1,39 @@
+<app-logo-title></app-logo-title>
+<p id="title">Banque de question</p>
+
+<div>
+    <app-question-filter></app-question-filter>
+</div>
+
+<div class="button-container">
+    <button mat-raised-button class="button" (click)="createQCMQuestion()">Créer une question QCM</button>
+    <button mat-raised-button class="button" (click)="createQRLQuestion()">Créer une question QRL</button>
+</div>
+
+
+<mat-expansion-panel hideToggle class="expansion-title" *ngFor="let question of questions" [ngClass]="question.type === 'QCM' ? 'qcm-color' : 'qrl-color'">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <span class="question-type">{{ question.type + ":   " }}</span>  <span >{{ question.text }}</span>
+        </mat-panel-title>
+        <mat-panel-description class="panel-description">
+            <div>Dernière modification: {{ question.lastModification | date: 'medium' }}</div>
+            <div class="button-container">
+                <button class="button" mat-raised-button (click)="openEditDialog(question)">Modifier</button>
+                <button class="button" mat-raised-button  (click)="deleteQuestion(question.id)">Supprimer</button>
+            </div>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <ng-container *ngIf="question.type === 'QCM'">
+        <h3 class="game-title">Choix de réponse:</h3>
+        <ul *ngFor="let choice of question.choices">
+            <li>
+                <p>{{ choice.text }}</p>
+            </li>
+        </ul>
+    </ng-container>
+    <ng-container *ngIf="question.type === 'QRL'">
+        <p>Ceci est une question à réponse longue</p>
+    </ng-container>
+</mat-expansion-panel>
+

@@ -1,0 +1,24 @@
+#timer-container {
+    align-self: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    width: 5.5vw;
+    height: auto;
+    margin-top: 3.5vh;
+}
+
+mat-card {
+    width: 18vw;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}

@@ -1,0 +1,104 @@
+#title {
+    text-align: center;
+    font-size: 44px;
+    color: #3d927e;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.mat-panel-title {
+    font-size: 20px;
+    font-weight: normal;
+    color: #262626;
+}
+
+
+.panel-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-expansion-panel {
+    width: 80%;
+    margin: 0 auto;
+}
+.game-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.game-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.game-time {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.game-modify-date {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.container {
+    min-height: 100vh;
+    height: auto;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 10px;
+}
+
+.buttons button {
+    margin-right: 35px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #3d927e;
+}
+
+.box-button {
+    margin-top: 2vh;
+}
+
+.button {
+    margin: 4vh;
+}

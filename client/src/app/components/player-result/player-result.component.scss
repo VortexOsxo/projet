@@ -1,0 +1,65 @@
+.player {
+    width: 155px;
+    height: 130px;
+    //background-color: rgba(255, 54, 54, 0.705);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.player p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+.player:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: context-menu;
+}
+
+.player.noAnswer {
+    background-color: #f88379;
+}
+
+.player.Answering {
+    background-color: #f0e68c;
+}
+
+.player.Answered {
+    background-color: #4fffb0;
+}
+
+.player.left {
+    color: black;
+    text-decoration: line-through;
+}
+
+button {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    line-height: 0;
+    outline: none;
+    position: relative;
+}
+
+#button-container {
+    position: relative;
+    left: 80%;
+    bottom: 100%;
+}
+
+button :hover {
+    cursor: pointer;
+}
+
+button img {
+    display: block;
+}

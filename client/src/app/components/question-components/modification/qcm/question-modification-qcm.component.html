@@ -1,0 +1,67 @@
+<div class="question-info">
+    <h2 >{{ question.text }}</h2>
+</div>
+
+<div class="question-container">
+    <div class="title-points">
+        <div class="form form-left">
+            <label class="question-info" for="input-question">Formulation de la question: </label>
+            <input type="text" [(ngModel)]="question.text" id="input-question" />
+            <div *ngIf="!nameValidity.isValid" class="error-message">{{ nameValidity.errorMessage }} *</div>
+        </div>
+    
+        <div class="form form-right">
+            <div><label class="question-info" for="input-points">Points: </label></div>
+            <input type="number" [(ngModel)]="question.points" min="10" max="100" step="10" id="input-points" />
+            <div *ngIf="!questionPointsValidity.isValid" class="error-message">{{ questionPointsValidity.errorMessage }} *</div>
+        </div>
+    </div>
+    
+</div>
+
+<fieldset id="choice-container">
+    <legend></legend>
+    <h3>Choix de réponse</h3>
+
+    <div *ngFor="let choice of question.choices; let j = index">
+        <div class="choice-container">
+            <label for="input-choice{{j}}">Choix {{ j + 1 }} :</label>
+
+            <div id="choice-input">
+                
+                <input type="text" [(ngModel)]="question.choices[j].text" id="input-choice" placeholder="Enter choice text" />
+                <div *ngIf="!getChoiceTextValidity(choice).isValid" class="error-message">{{ getChoiceTextValidity(choice).errorMessage }} *</div>
+                <div class="up-and-down">
+                    <button mat-button type="button" (click)="moveChoice(j, -1)" [disabled]="j === 0" title="Move choice up">
+                        <mat-icon>keyboard_arrow_up</mat-icon>
+                    </button>
+    
+                    <button mat-button type="button" (click)="moveChoice(j, 1)" [disabled]="j === question.choices.length - 1" title="Move choice down">
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div id="choice-value">
+                <button type="button" (click)="deleteChoice(j)" title="Delete Choice">
+                    <mat-icon>clear</mat-icon>
+                </button>
+
+                <label for="input-isCorrect">Réponse correcte:</label>
+                <input type="checkbox" [(ngModel)]="question.choices[j].isCorrect" id="input-isCorrect" />
+            </div>
+
+        </div>
+    </div>
+
+    <div id="button-container">
+        <button mat-raised-button color="primary" (click)="addChoice()" [disabled]="question.choices.length >= 4">Ajouter un choix de réponse</button>
+    </div>
+
+    <div *ngIf="!responsesValidity.isValid && responsesValidity.errorMessage" class="error-message">{{ responsesValidity.errorMessage }}*</div>
+
+    <div>
+        <button mat-raised-button color="primary" (click)="addToQuestionBank()">Enregistrer la question dans la banque</button>
+        <p class="confirmation-text" *ngIf="showMessage">La question a été ajoutée à la banque avec succès!</p>
+    </div>
+</fieldset>

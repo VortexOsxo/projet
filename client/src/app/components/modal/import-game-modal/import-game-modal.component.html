@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Importer un fichier JSON</h2>
+<mat-dialog-content>
+  <input type="file" (change)="checkFile(getFile())" accept=".json" #fileInput>
+</mat-dialog-content>
+<mat-dialog-actions *ngIf="this.invalidQuizName">
+  <input type="text" [(ngModel)]="quizToAdd.title" placeholder="Nouveau nom" class="form-control" required>
+</mat-dialog-actions>
+<mat-dialog-actions>
+  <button mat-button (click)="uploadFile()">Importer</button>
+  <button mat-button (click)="closeDialog()">Annuler</button>
+</mat-dialog-actions>

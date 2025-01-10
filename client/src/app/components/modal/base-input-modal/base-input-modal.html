@@ -1,0 +1,13 @@
+<div class="modal-container" (keydown)="onKeyPress($event)">
+    <mat-dialog-content>
+        <div *ngFor="let input of getInputs(); let i = index">
+            <p>Entrez votre {{ input }}:</p>
+            <input class="modal-container" [type]="getInputType(i)" matInput [(ngModel)]="userInputs[i]" id="input{{i}}" placeholder="Entrez votre {{ input }}" />
+        </div>
+        <p *ngIf="errorMessage !== undefined" class="error-message">{{errorMessage}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-stroked-button color="primary" (click)="closeModal()">Annuler</button>
+        <button mat-stroked-button color="primary" (click)="submitInput()">Soumettre</button>
+    </mat-dialog-actions>
+</div>

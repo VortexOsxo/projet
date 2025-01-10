@@ -1,0 +1,98 @@
+body {
+    background-color: #dfffde;
+}
+
+#player-title {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 2vw;
+}
+
+#top-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+}
+
+#admin-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+#admin-button {
+    margin-left: 1vw;
+    margin-right: 1 vw;
+    width: 10vw;
+}
+
+#lower-section {
+    display: flex;
+    height: 75vh;
+    gap: 5vw;
+    padding-left: 2vw;
+}
+
+#player-list {
+    width: 70vw;
+    height: 67.2vh;
+}
+
+.player-list-item {
+    display: flex;
+    align-items: center;
+    margin: 2vh;
+}
+
+.player-name {
+    margin-right: 3vh;
+    font-size: 1.5vw;
+}
+
+.ban-button {
+    height: 5vh;
+    width: 5vh;
+}
+
+#send-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    width: 4.3vw;
+    font-size: 0.9vw;
+    overflow: hidden;
+}
+
+#chat-window {
+    padding: 1vw;
+    text-align: center;
+    height: 63.2vh;
+    background-color: #8fb5bb;
+    font-size: 1.2vw;
+    font-weight: 550;
+}
+
+#chat-box {
+    width: 19.65vw;
+    height: 73.64vh;
+    justify-content: center;
+    margin-top: 0vh;
+    margin-right: -5vw;
+}
+
+#chat-input {
+    display: flex;
+    justify-content: center;
+    gap: 0.5vw;
+    background-color: #b9cdd0;
+    padding: 0.5vw;
+    height: 4vh;
+}

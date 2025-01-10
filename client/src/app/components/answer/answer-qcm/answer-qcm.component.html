@@ -1,0 +1,15 @@
+<div class="grid-container">
+    <ng-container *ngFor="let option of answerOptions; let i = index">
+        <button
+            mat-raised-button
+            class="answer-buttons"
+            (click)="toggleButton(i)"
+            [disabled]="!option"
+            [class.active]="isButtonActive(i)"
+            [class.correct]="isButtonCorrected(i)"
+        >
+            <p class="question-number">{{ i + 1 }}</p>
+            {{ option }}
+        </button>
+    </ng-container>
+</div>

@@ -1,0 +1,29 @@
+<app-logo-title></app-logo-title>
+
+<div id="top-section">
+    <div id="admin-zone" *ngIf="isOrganiser">
+        <h1>{{ gameId }}</h1>
+        <div id="buttons">
+            <button mat-raised-button color="primary" (click)="toggleLobbyLock()" id="admin-button">{{ roomLocked ? 'Déverrouiller' : 'Verrouiller' }}</button>
+            <button mat-raised-button color="primary" [disabled]="!canStartGame()" (click)="startGame()" id="admin-button">Commencer la partie</button>
+        </div>
+    </div>
+</div>
+
+<div id="player-title">
+    <h2>Attente des joueurs...</h2>
+</div>
+
+<div id="lower-section">
+    <div id="player-list">
+        <div *ngFor="let player of players" class="player-list-item">
+            <div class="player-name">{{ player.name }}</div>
+            <div *ngIf="isOrganiser" class="player-buttons">
+                <button mat-fab color="primary" class="ban-button" (click)="removePlayer(player)">
+                    <mat-icon>block</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <app-chat></app-chat>
+</div>

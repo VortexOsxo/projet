@@ -1,0 +1,31 @@
+<app-logo-title></app-logo-title>
+<div id="top-section">
+    <button mat-raised-button id="give-up" routerLink="/home">Finir</button>
+</div>
+
+<div id="question-container">
+    <div id="score-container">Question: {{ question.points }} pts</div>
+    <div id="question-box">Question: {{ question.text }}</div>
+    <div id="question-number">Question {{ ((questionIndexObserver | async) || 0) + 1 }}/{{ numberQuestions }}</div>
+</div>
+
+<div id="bottom-section">
+    <div>
+        <div id="left-side">
+            <div id="control">
+                <app-interactive-timer></app-interactive-timer>
+                <button mat-raised-button id="next-button" [disabled]="!isNextQuestionButtonActive()" (click)="goToNextQuestion()">{{ buttonName }}</button>
+            </div>
+    
+            <div id="histogram">
+                <app-histogram-result [questionHistogram]="question" [questionIndex]="((questionIndexObserver | async) || 0)"></app-histogram-result>
+            </div>
+        </div>
+        <app-player-list id="player-list" [hasAllFunctionalities]="true"></app-player-list>
+    </div>
+
+    <div id="chat-box">
+        <app-chat></app-chat>
+        
+    </div>
+</div>

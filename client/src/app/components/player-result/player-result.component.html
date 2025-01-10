@@ -1,0 +1,16 @@
+<div
+    class="player"
+    [class.noAnswer]="player.answerState === 0 && this.canBanUser"
+    [class.Answering]="player.answerState === 1 && this.canBanUser"
+    [class.Answered]="player.answerState === 2 && this.canBanUser"
+    [class.left]="player.answerState === -1 && this.canBanUser"
+>
+    <h2>{{ player.name }}</h2>
+    <p>Pointage : {{ player.score }} pts</p>
+    <p>Nombre de bonus : {{ player.bonusCount }}</p>
+    <div id="button-container" [hidden]="!canBanUser">
+        <button (click)="banPlayer()">
+            <img [src]="iconPath" width="30" height="30" alt="Ban button" />
+        </button>
+    </div>
+</div>

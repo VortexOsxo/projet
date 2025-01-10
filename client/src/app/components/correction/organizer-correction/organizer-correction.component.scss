@@ -1,0 +1,27 @@
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+  
+mat-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+  
+mat-card-header {
+    background-color: #009688;
+    color: white;
+    border-radius: 10px;
+}
+  
+mat-card-title {
+    font-size: 18px;
+}
+  
+mat-card-content {
+    padding: 10px;
+}
+  

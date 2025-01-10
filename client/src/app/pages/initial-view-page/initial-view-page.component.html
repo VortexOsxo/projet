@@ -1,0 +1,19 @@
+<app-logo-title></app-logo-title>
+<div class="container justified">
+
+    <img src="./assets/logo.png" alt="Logo Lemon" width="300" height="300"/>
+    
+    <div class="justified">
+        <button mat-raised-button color="primary" class="button" (click)="openJoinGameModal()">Rejoindre une partie</button>
+        <button mat-raised-button color="primary" class="button" routerLink="/game-creation">Créer une partie</button>
+        <button mat-raised-button color="primary" class="button" (click)="openAdminLoginModal()">Administrer les jeux</button>
+    </div>
+
+
+    <footer class="footer-item">
+        <h4 class="team-name">Équipe 308</h4>
+        <p>
+            Jason Chen, Rafik Hachemi, Skander Hellal, Sofyan Khayyal, Pierre Olivier Piquant, Philippe Martin
+        </p>
+    </footer>
+</div>

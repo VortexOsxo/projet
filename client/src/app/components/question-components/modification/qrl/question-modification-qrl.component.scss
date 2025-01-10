@@ -1,0 +1,81 @@
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+input[type='text'],
+input[type='number'],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.text-center {
+    text-align: center;
+}
+
+input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+fieldset {
+    margin: 20px;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+.question-info {
+    margin-left: 10px;
+}
+#input-question,
+#input-points {
+    width: 97%;
+    margin-left: 10px;
+}
+#button-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#qrl-container {
+    background-color: #8fd8b7;
+    height: 300px; /* Définir la hauteur souhaitée */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.questionInfo {
+    max-width: 90%; /* Limiter la largeur */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Afficher des points de suspension pour indiquer le débordement */
+    white-space: nowrap; /* Empêcher le texte de se retourner à la ligne */
+    margin-right: 10px; /* Espacement entre l'étiquette et l'input */
+
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.confirmation-text{
+    color: #ffffff;
+}

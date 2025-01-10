@@ -1,0 +1,8 @@
+<mat-card class="center">
+    <mat-card-title class="button-title">Sélectionnez un filtre:</mat-card-title>
+    <mat-card-content>
+      <button mat-raised-button class="custom-button" [color]="isSelected('QCM') ? 'primary' : ''" (click)="filterQuestionByQCM()">QCM</button>
+      <button mat-raised-button class="custom-button" [color]="isSelected('QRL') ? 'primary' : ''" (click)="filterQuestionByQRL()">QRL</button>
+      <button mat-raised-button class="custom-button" [color]="isSelected('Undefined') ? 'primary' : ''" (click)="removeFilter()">Aucun</button>
+    </mat-card-content>
+</mat-card>

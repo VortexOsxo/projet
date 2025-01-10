@@ -1,0 +1,31 @@
+.answer-buttons {
+    width: 24.64vw;
+    height: 19.29vh;
+    font-size: 1.5vw;
+    border-radius: 2vw;
+    font-weight: 700;
+    margin: 0;
+    cursor: pointer;
+}
+
+.answer-buttons.active {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.answer-buttons.correct {
+    background-color: #009688;
+    color: #fff;
+}
+
+.question-number {
+    margin-right: 20vw;
+    margin-top: -3vh;
+    font-size: 1vw;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}

@@ -1,0 +1,15 @@
+<div class="chat-container">
+    <div class="chat-header">{{ (usernameObservable | async) }}</div>
+    <div class="messages" #scrollContainer>
+        <div *ngFor="let message of messages" class="message">
+            <span class="message-user">{{ message.user }}</span>
+            <span class="message-content">{{ message.content }}</span>
+            <span class="message-time">{{ message.time | date:'shortTime' }}</span>
+        </div>
+    </div> 
+    <div class="chat-input">
+        <input [disabled]="(isBannedObservable | async) ?? false" [(ngModel)]="newMessage" maxlength="200" placeholder="Envoyez un message..." type="text"  (keydown.enter)="sendMessage()"/>
+        <button [disabled]="(isBannedObservable | async) ?? false" (click)="sendMessage()">Envoyer</button>
+    </div>
+</div>
+

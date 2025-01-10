@@ -1,0 +1,21 @@
+<app-logo-title></app-logo-title>
+<div class="container">
+    <div class="chat">
+        <app-chat></app-chat>
+    </div>
+    <div class="content">
+        <h2 id="title">Résultats de la partie</h2>
+        <app-player-list [hasAllFunctionalities]="false"></app-player-list>
+        <legend class="legend">Statistiques de la partie</legend>
+        <div id="histogram-list">
+            <app-histogram-result [questionHistogram]="question" [questionIndex]="questionGraphIndex"></app-histogram-result>
+            <div class="buttons-container">
+                <button mat-raised-button [disabled]="!canGoToPreviousGraph()" (click)="goToPreviousGraph()">Précédent</button>
+                <button mat-raised-button [disabled]="!canGoToNextGraph()" (click)="goToNextGraph()">Prochain</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="quit-button">
+    <button mat-raised-button color="primary" routerLink="/home">Quitter</button>
+</div>

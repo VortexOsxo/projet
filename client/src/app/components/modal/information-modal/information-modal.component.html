@@ -1,0 +1,12 @@
+<div class="modal-container">
+    <mat-dialog-content>
+        <div>
+            <p *ngFor="let message of messages">
+                {{ message }}
+            </p>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-stroked-button color="primary" (click)="closeModal()">Compris</button>
+    </mat-dialog-actions>
+</div>

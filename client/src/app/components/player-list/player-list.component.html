@@ -1,0 +1,9 @@
+<legend class="legend">Classement des joueurs</legend>
+<select (change)="action($event)" [hidden]="!hasAllFunctionalities" [(ngModel)]="sortAlgorithmName">
+    <option *ngFor="let x of order" [value]="x">{{ x }}</option>
+</select>
+<div id="player-list">
+    <div *ngFor="let player of players">
+        <app-player-result [player]="player" [id]="player.answerState === -1 ? 'leftPlayers' : null" [canBanUser]="hasAllFunctionalities"></app-player-result>
+    </div>
+</div>

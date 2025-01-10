@@ -1,0 +1,19 @@
+<div id="qrl-container">
+    <h2 class="questionInfo">{{ question.text }}</h2>
+    <div class="form-group">
+        <label class="question-info" for="input-question">Formulation de la question: </label>
+        <input type="text" [(ngModel)]="question.text" id="input-question" />
+        <div *ngIf="!nameValidity.isValid" class="error-message">{{ nameValidity.errorMessage }} *</div>
+    </div>
+    <div class="form-group">
+        <label class="question-info" for="input-points">Points: </label>
+        <input type="number" [(ngModel)]="question.points" min="10" max="100" step="10" id="input-points" />
+    </div>
+    <div *ngIf="!questionPointsValidity.isValid" class="error-message">{{ questionPointsValidity.errorMessage }} *</div>
+    <div id="button-container" class="text-center">
+        <button mat-raised-button color="primary" (click)="addToQuestionBank()">Enregistrer la question</button>
+        <div>
+            <p class="confirmation-text" *ngIf="showMessage">La question a été enregistrée dans la banque avec succès!</p>
+        </div>
+    </div>
+</div>

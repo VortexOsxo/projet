@@ -1,0 +1,11 @@
+<p id="title">Banque de question</p>
+<app-question-filter></app-question-filter>
+
+<div class="button-container">
+    <button mat-raised-button class="button" (click)="addQuestionsToQuiz()">Ajouter au Quiz</button>
+</div>
+
+<mat-selection-list #questionList [(ngModel)]="selectedQuestions">
+    <mat-list-option *ngFor="let question of questions" [value]="question" [ngClass]="question.type === 'QCM' ? 'qcm-color' : 'qrl-color'">{{question.type}}: {{ question.text }}</mat-list-option>
+</mat-selection-list>
+

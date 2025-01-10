@@ -1,0 +1,65 @@
+<app-logo-title></app-logo-title>
+
+<h2 id="title">{{ title }}</h2>
+
+<div id="quiz-description">
+    <div class="title-time">
+        <div class="form form-left">
+            <label for="name">Nom du quiz :</label>
+            <input type="text" id="name" [(ngModel)]="quiz.title" />
+            <div *ngIf="!nameValidity.isValid" class="error-message">{{ nameValidity.errorMessage }} *</div>
+        </div>
+    
+        <div class="form form-right">
+            <label for="duration">Temps alloué:</label>
+            <input type="number" id="duration" [(ngModel)]="quiz.duration" min="10" max="60" step="1" />
+            <div *ngIf="!quizDurationValidity.isValid" class="error-message">{{ quizDurationValidity.errorMessage }} *</div>
+        </div>
+    </div>
+    
+    
+
+    <div class="form">
+        <label for="description">Description :</label>
+        <textarea type="text" id="description" [(ngModel)]="quiz.description"></textarea>
+        <div *ngIf="!quizDescriptioneValidity.isValid" class="error-message">{{ quizDescriptioneValidity.errorMessage }} *</div>
+    </div>
+
+    <div id="save-button">
+        <button mat-raised-button color="primary" (click)="submitQuiz()">Enregistrer le Jeu</button>
+    </div>
+
+</div>
+<div id="question-list-container">
+    <legend id="list-legend">Liste de questions</legend>
+    <div *ngFor="let question of quiz.questions; let i = index" class="question-container">
+        
+        <div class="upper-div">
+            <div class="button-container">
+                <button mat-button matRipple id="delete-button-container" type="button" (click)="deleteQuestion(i)"><mat-icon>clear</mat-icon></button>
+            </div>
+            <div class="question-info-wrapper">
+                <div id="question-title">
+                    <button mat-button matRipple type="button" (click)="moveQuestion(i, -1)" [disabled]="i === 0"><mat-icon>arrow_upward</mat-icon></button>
+                    <h3 class="question-number">Question {{ i + 1 }}</h3>
+                    <button mat-button matRipple type="button" (click)="moveQuestion(i, 1)" [disabled]="i === this.quiz.questions.length - 1"><mat-icon>arrow_downward</mat-icon></button>
+                </div>
+            </div>
+        </div>
+        
+        <ng-container *ngIf="question.type === 'QCM'">
+            <app-question-modification-qcm [question]="question"></app-question-modification-qcm>
+        </ng-container>
+        <ng-container *ngIf="question.type === 'QRL'">
+            <app-question-modification-qrl [question]="question"></app-question-modification-qrl>
+        </ng-container>
+    </div>
+    <div>
+        <button id="addqcm" class="addButton" (click)="addQCMQuestion()">Ajouter un QCM</button>
+        <button id="addqrl" class="addButton" (click)="addQRLQuestion()">Ajouter un QRL</button>
+    </div>
+
+    <app-local-question-bank (newItemEvent)="addQuestionsToQuiz($event)"></app-local-question-bank>
+</div>
+
+

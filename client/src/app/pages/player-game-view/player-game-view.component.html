@@ -1,0 +1,30 @@
+<app-logo-title></app-logo-title>
+
+<div id="top-section">
+    <div class="player-score">Votre Pointage: {{ (currentScoreObserver | async) || 0 }} pts</div>
+    <button mat-raised-button id="give-up" routerLink="/home">Abandonner</button>
+</div>
+
+<div id="question-container">
+    <div id="question-box">{{ question.text }} pour {{ this.question.points }} pts !</div>
+</div>
+
+<div id="lower-section">
+    <app-game-countdown id="countdown" [radius]="50"></app-game-countdown>
+    <div id="answer-container">
+        <ng-container *ngIf="isQuestionAQcm()">
+            <app-answer-qcm></app-answer-qcm>
+        </ng-container>
+        <ng-container *ngIf="!isQuestionAQcm()">
+            <app-answer-qrl></app-answer-qrl>
+        </ng-container>
+
+        <div id="bottom-button-container">
+            <button mat-raised-button id="submit-button" [disabled]="!canSubmitAnswer()" (click)="submitButtonHandler()">Soumettre</button>
+        </div>
+    </div>
+
+    <div id="chat-box">
+        <app-chat></app-chat>
+    </div>
+</div>

@@ -1,0 +1,206 @@
+#title {
+    text-align: center;
+    font-size: 44px;
+    color: #3d927e; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+    text-transform: uppercase; /* Texte en majuscules */
+    margin-top: 20px; /* Espacement en haut */
+    margin-bottom: 35px; /* Espacement en bas */
+}
+
+.form label,
+.form input,
+.form textarea {
+    color: #333; /* Couleur de texte noire */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
+.form {
+    margin-bottom: 0px;
+    padding: 10px; /* Espacement interne du formulaire */
+    border-radius: 10px; /* Bord arrondi du formulaire */
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.question-number {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type='text'],
+input[type='number'],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type='checkbox'] {
+    margin-right: 5px;
+}
+
+legend {
+    margin: auto;
+    font-weight: bold;
+}
+
+.fa {
+    margin-right: 5px;
+}
+
+#quiz-description {
+    width: 75%;
+    margin: 20px auto 0;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Couleur de fond du formulaire */
+    padding: 25px; /* Espacement interne du formulaire */
+    border-radius: 15px; /* Bord arrondi du formulaire */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#question-list-container {
+    width: 75%;
+    margin: 20px auto 0;
+    margin-bottom: 20px;
+    padding: 25px; /* Espacement interne du formulaire */
+    border-radius: 15px; /* Bord arrondi du formulaire */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+#description {
+    height: 100px; /* Définissez la hauteur souhaitée */
+    resize: vertical; /* Autorisez le redimensionnement vertical */
+}
+
+#save-button {
+    margin-top: 30px;
+    text-align: center;
+    padding: 30px 60px; 
+    font-size: 36px; 
+    font-weight: bold; 
+    color: white;
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+#question-title {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;
+    gap: 20px;
+}
+#question-list-container label,
+#question-list-container input,
+#question-list-container textarea {
+    display: block; /* Pour forcer chaque élément à occuper une ligne */
+    margin: 10px 10px 10px; /* Centrer les éléments horizontalement avec une marge */
+    text-align: left; /* Alignement du texte à gauche à l'intérieur des éléments */
+}
+#question-list-container input {
+    width: 97%; /* ou toute autre largeur que vous préférez */
+}
+
+.question-container {
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 15px; /* Coins arrondis */
+}
+.addButton {
+    margin-right: 10px;
+    color: #15493d;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    height: 45px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.214);
+}
+
+.buttonSpacer {
+    margin: 0 10px; /* Espace entre les boutons */
+}
+#addqcm {
+    background-color: #c0f3d8;
+}
+#addqrl {
+    background-color: #8fd8b7;
+}
+#list-legend {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#delet-button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#delet-button-container button {
+    margin-right: 15px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(239, 0, 0);
+    border: none;
+    cursor: pointer;
+    height: 45px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#delet-button-container button:hover {
+    background-color: darkred;
+}
+
+.title-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-left {
+    flex: 1;
+}
+
+.form-right {
+    flex: 0 0 100px;
+}
+
+.upper-div {
+    display: flex;
+    align-items: center;
+}
+
+.upper-div button {
+    color: #ffffff;
+    background-color: #009688;
+}
+
+.button-container {
+    margin-left: 10px;
+}
+
+.question-info-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 75px;
+}
+
+button {
+    cursor: pointer;
+}

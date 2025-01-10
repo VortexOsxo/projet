@@ -1,0 +1,6 @@
+<div class="countdown"
+    [style.width.px]="radius * 2"
+    [style.height.px]="radius * 2"
+    [style.font-size.px]="radius">
+    <p>{{ (countdownValueObserver | async) || 0}}</p>
+</div>

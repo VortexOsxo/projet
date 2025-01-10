@@ -1,0 +1,21 @@
+<ng-container *ngIf="reloadComponent; else noReloadComponent"> </ng-container>
+
+<ng-template #noReloadComponent>
+    <div *ngIf="userState === 2">
+        <ng-container *ngIf="isOrganiser; then organiserView; else playerView"></ng-container>
+        <ng-template #organiserView>
+            <app-organiser-game-view></app-organiser-game-view>
+        </ng-template>
+        <ng-template #playerView>
+            <app-player-game-view></app-player-game-view>
+        </ng-template>
+    </div>
+
+    <div *ngIf="userState === 1">
+        <app-wait-view [isOrganiser]="isOrganiser"></app-wait-view>
+    </div>
+
+    <div *ngIf="userState === 5">
+        <app-results-view></app-results-view>
+    </div>
+</ng-template>

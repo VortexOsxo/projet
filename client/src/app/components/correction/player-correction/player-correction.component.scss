@@ -1,0 +1,21 @@
+mat-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+  
+mat-card-header {
+    background-color: #009688;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+  
+mat-card-title {
+    font-size: 18px;
+}
+  
+mat-card-content {
+    padding-top: 10px;
+}
